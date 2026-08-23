@@ -1,0 +1,50 @@
+{
+  "factory_smoke": {
+    "character": "bird",
+    "ambient": "birds",
+    "positiveSfx": "birdChirp",
+    "negativeSfx": "cough"
+  },
+  "plastic_river": {
+    "character": "fish",
+    "ambient": "water",
+    "positiveSfx": "fishBloop",
+    "negativeSfx": "splash"
+  },
+  "wasting_water": {
+    "character": "water",
+    "ambient": "water",
+    "positiveSfx": "waterOff",
+    "negativeSfx": "drip"
+  },
+  "tree_cutting": {
+    "character": "bird",
+    "ambient": "birds",
+    "positiveSfx": "birdChirp",
+    "negativeSfx": "treeFall"
+  },
+  "road_safety": {
+    "character": "narrator",
+    "ambient": "city",
+    "positiveSfx": "cheer",
+    "negativeSfx": "carHonk"
+  },
+  "helping_animal": {
+    "character": "cat",
+    "ambient": "birds",
+    "positiveSfx": "catPurr",
+    "negativeSfx": "catSad"
+  },
+  "classroom_clean": {
+    "character": "kid",
+    "ambient": "none",
+    "positiveSfx": "sparkle",
+    "negativeSfx": "thud"
+  },
+  "sharing": {
+    "character": "kid",
+    "ambient": "none",
+    "positiveSfx": "cheer",
+    "negativeSfx": "sad"
+  }
+}
