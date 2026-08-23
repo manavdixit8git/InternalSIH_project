@@ -1,0 +1,51 @@
+[
+  {
+    "id": "planet_protector",
+    "name": "Planet Protector",
+    "emoji": "🌱",
+    "color": "#22c55e",
+    "description": "Kept the air and planet clean!"
+  },
+  {
+    "id": "safety_star",
+    "name": "Safety Star",
+    "emoji": "🛡️",
+    "color": "#f97316",
+    "description": "Made a super safe choice!"
+  },
+  {
+    "id": "kind_heart",
+    "name": "Kind Heart",
+    "emoji": "❤️",
+    "color": "#ec4899",
+    "description": "Showed lots of kindness!"
+  },
+  {
+    "id": "helping_hand",
+    "name": "Helping Hand",
+    "emoji": "🤝",
+    "color": "#38bdf8",
+    "description": "Helped make things better!"
+  },
+  {
+    "id": "water_saver",
+    "name": "Water Saver",
+    "emoji": "💧",
+    "color": "#06b6d4",
+    "description": "Saved precious water!"
+  },
+  {
+    "id": "animal_friend",
+    "name": "Animal Friend",
+    "emoji": "🐾",
+    "color": "#f59e0b",
+    "description": "Was kind to an animal!"
+  },
+  {
+    "id": "nature_guardian",
+    "name": "Nature Guardian",
+    "emoji": "🌳",
+    "color": "#16a34a",
+    "description": "Protected nature and trees!"
+  }
+]
