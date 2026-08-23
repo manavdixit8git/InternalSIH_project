@@ -1,0 +1,282 @@
+[
+  {
+    "id": "factory_smoke",
+    "title": "The Smoky Factory",
+    "category": "Environment",
+    "categoryColor": "#22c55e",
+    "location": "industrial_area",
+    "scene": "factory",
+    "ageGroups": ["5-7", "8-10", "11-12"],
+    "intro": "Look! The big factory is making lots of dark smoke.",
+    "question": "What should we do?",
+    "worldKey": "sky",
+    "choices": [
+      {
+        "id": "reduce_smoke",
+        "text": "Clean the smoke",
+        "emoji": "🌱",
+        "type": "positive",
+        "reward": 20,
+        "badge": "planet_protector",
+        "state": "positive",
+        "characterMessage": "Thank you! Clean air helps us live!",
+        "message": "Great choice! Cleaner air keeps people, animals and nature healthy."
+      },
+      {
+        "id": "increase_smoke",
+        "text": "Make more smoke",
+        "emoji": "🌫️",
+        "type": "negative",
+        "reward": 0,
+        "state": "negative",
+        "characterMessage": "The dirty air makes it hard to breathe...",
+        "message": "Too much smoke pollutes the air and can harm living things."
+      }
+    ]
+  },
+  {
+    "id": "plastic_river",
+    "title": "Plastic by the River",
+    "category": "Environment",
+    "categoryColor": "#22c55e",
+    "location": "river",
+    "scene": "river",
+    "ageGroups": ["5-7", "8-10", "11-12"],
+    "intro": "You finished a snack. Here is the empty plastic wrapper.",
+    "question": "Where should it go?",
+    "worldKey": "river",
+    "choices": [
+      {
+        "id": "use_bin",
+        "text": "Put it in the bin",
+        "emoji": "🗑️",
+        "type": "positive",
+        "reward": 20,
+        "badge": "nature_guardian",
+        "state": "positive",
+        "characterMessage": "Yay! The water stays clean for us!",
+        "message": "Great job! Clean water keeps fish and rivers healthy."
+      },
+      {
+        "id": "throw_river",
+        "text": "Throw it in the river",
+        "emoji": "🌊",
+        "type": "negative",
+        "reward": 0,
+        "state": "negative",
+        "characterMessage": "The plastic is hurting our home...",
+        "message": "Plastic in rivers hurts fish and pollutes the water."
+      }
+    ]
+  },
+  {
+    "id": "wasting_water",
+    "title": "The Running Tap",
+    "category": "Responsibility",
+    "categoryColor": "#38bdf8",
+    "location": "neighborhood",
+    "scene": "water",
+    "ageGroups": ["5-7", "8-10", "11-12"],
+    "intro": "The tap is running and running with nobody using it!",
+    "question": "What should we do?",
+    "worldKey": "water",
+    "choices": [
+      {
+        "id": "turn_off",
+        "text": "Turn off the tap",
+        "emoji": "🚰",
+        "type": "positive",
+        "reward": 20,
+        "badge": "water_saver",
+        "state": "positive",
+        "characterMessage": "Thank you for saving me!",
+        "message": "Well done! Saving water helps everyone have enough."
+      },
+      {
+        "id": "leave_running",
+        "text": "Leave it running",
+        "emoji": "💧",
+        "type": "negative",
+        "reward": 0,
+        "state": "negative",
+        "characterMessage": "So much water is being wasted...",
+        "message": "Leaving taps on wastes water that everyone needs."
+      }
+    ]
+  },
+  {
+    "id": "tree_cutting",
+    "title": "Save the Tree",
+    "category": "Environment",
+    "categoryColor": "#22c55e",
+    "location": "green_valley",
+    "scene": "tree",
+    "ageGroups": ["5-7", "8-10", "11-12"],
+    "intro": "Someone wants to cut down this big, healthy tree full of birds.",
+    "question": "What should we do?",
+    "worldKey": "trees",
+    "choices": [
+      {
+        "id": "save_tree",
+        "text": "Save the tree",
+        "emoji": "🌳",
+        "type": "positive",
+        "reward": 20,
+        "badge": "nature_guardian",
+        "state": "positive",
+        "characterMessage": "Hooray! We get to keep our home!",
+        "message": "Wonderful! Trees give us air, shade and homes for birds."
+      },
+      {
+        "id": "cut_tree",
+        "text": "Cut it down",
+        "emoji": "🪓",
+        "type": "negative",
+        "reward": 0,
+        "state": "negative",
+        "characterMessage": "Where will we live now?",
+        "message": "Cutting healthy trees takes away homes and clean air."
+      }
+    ]
+  },
+  {
+    "id": "road_safety",
+    "title": "Crossing the Road",
+    "category": "Safety",
+    "categoryColor": "#f97316",
+    "location": "city_road",
+    "scene": "road",
+    "ageGroups": ["5-7", "8-10", "11-12"],
+    "intro": "You need to get to the other side of a busy road.",
+    "question": "How should you cross?",
+    "worldKey": "safety",
+    "choices": [
+      {
+        "id": "zebra_cross",
+        "text": "Use the crossing",
+        "emoji": "🚸",
+        "type": "positive",
+        "reward": 20,
+        "badge": "safety_star",
+        "state": "positive",
+        "characterMessage": "Safe and sound! Great looking!",
+        "message": "Smart! Always cross at the zebra crossing when it is safe."
+      },
+      {
+        "id": "run_across",
+        "text": "Run across quickly",
+        "emoji": "🏃",
+        "type": "negative",
+        "reward": 0,
+        "state": "negative",
+        "characterMessage": "Oh no, that was very risky!",
+        "message": "Running across is dangerous. Always use the crossing."
+      }
+    ]
+  },
+  {
+    "id": "helping_animal",
+    "title": "The Trapped Kitten",
+    "category": "Kindness",
+    "categoryColor": "#ec4899",
+    "location": "animal_park",
+    "scene": "animal",
+    "ageGroups": ["5-7", "8-10", "11-12"],
+    "intro": "A little kitten is stuck and cannot get down. It looks scared.",
+    "question": "What should you do?",
+    "worldKey": "kindness",
+    "choices": [
+      {
+        "id": "get_help",
+        "text": "Ask an adult to help",
+        "emoji": "🧑‍🚒",
+        "type": "positive",
+        "reward": 20,
+        "badge": "animal_friend",
+        "state": "positive",
+        "characterMessage": "Meow! Thank you for helping me!",
+        "message": "Kind and safe! Getting an adult is the best way to help."
+      },
+      {
+        "id": "ignore_animal",
+        "text": "Walk away",
+        "emoji": "🚶",
+        "type": "negative",
+        "reward": 0,
+        "state": "negative",
+        "characterMessage": "I'm still stuck and scared...",
+        "message": "Ignoring an animal in need is not kind. We can help safely."
+      }
+    ]
+  },
+  {
+    "id": "classroom_clean",
+    "title": "Paper on the Floor",
+    "category": "Responsibility",
+    "categoryColor": "#38bdf8",
+    "location": "school",
+    "scene": "classroom",
+    "ageGroups": ["5-7", "8-10", "11-12"],
+    "intro": "Oops! A piece of paper fell on the classroom floor.",
+    "question": "What should you do?",
+    "worldKey": "school",
+    "choices": [
+      {
+        "id": "pick_up",
+        "text": "Pick it up",
+        "emoji": "🧹",
+        "type": "positive",
+        "reward": 20,
+        "badge": "helping_hand",
+        "state": "positive",
+        "characterMessage": "Our classroom looks so tidy!",
+        "message": "Great! A clean classroom is nice for everyone."
+      },
+      {
+        "id": "ignore_paper",
+        "text": "Leave it there",
+        "emoji": "🙈",
+        "type": "negative",
+        "reward": 0,
+        "state": "negative",
+        "characterMessage": "The room is getting messy...",
+        "message": "Leaving mess makes the room untidy for the whole class."
+      }
+    ]
+  },
+  {
+    "id": "sharing",
+    "title": "Sharing Colors",
+    "category": "Social Skills",
+    "categoryColor": "#a855f7",
+    "location": "school",
+    "scene": "sharing",
+    "ageGroups": ["5-7", "8-10", "11-12"],
+    "intro": "Your friend has no colors for the art activity and looks sad.",
+    "question": "What will you do?",
+    "worldKey": "social",
+    "choices": [
+      {
+        "id": "share_colors",
+        "text": "Share your colors",
+        "emoji": "🖍️",
+        "type": "positive",
+        "reward": 20,
+        "badge": "kind_heart",
+        "state": "positive",
+        "characterMessage": "Thank you! You're a great friend!",
+        "message": "Lovely! Sharing makes everyone happy."
+      },
+      {
+        "id": "refuse_share",
+        "text": "Keep them to yourself",
+        "emoji": "🙅",
+        "type": "negative",
+        "reward": 0,
+        "state": "negative",
+        "characterMessage": "I feel left out and sad...",
+        "message": "Not sharing can make friends feel sad and lonely."
+      }
+    ]
+  }
+]
