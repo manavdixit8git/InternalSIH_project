@@ -1,0 +1,82 @@
+[
+  {
+    "id": "green_valley",
+    "name": "Green Valley",
+    "emoji": "🌳",
+    "color": "#4ade80",
+    "unlocked": true,
+    "x": 18,
+    "y": 62,
+    "scenarios": ["tree_cutting"]
+  },
+  {
+    "id": "industrial_area",
+    "name": "Industrial Area",
+    "emoji": "🏭",
+    "color": "#94a3b8",
+    "unlocked": true,
+    "x": 40,
+    "y": 34,
+    "scenarios": ["factory_smoke"]
+  },
+  {
+    "id": "school",
+    "name": "School",
+    "emoji": "🏫",
+    "color": "#fbbf24",
+    "unlocked": true,
+    "x": 68,
+    "y": 26,
+    "scenarios": ["classroom_clean", "sharing"]
+  },
+  {
+    "id": "neighborhood",
+    "name": "Neighborhood",
+    "emoji": "🏠",
+    "color": "#fb923c",
+    "unlocked": true,
+    "x": 60,
+    "y": 58,
+    "scenarios": ["wasting_water"]
+  },
+  {
+    "id": "river",
+    "name": "The River",
+    "emoji": "🌊",
+    "color": "#38bdf8",
+    "unlocked": true,
+    "x": 30,
+    "y": 82,
+    "scenarios": ["plastic_river"]
+  },
+  {
+    "id": "city_road",
+    "name": "City Road",
+    "emoji": "🚦",
+    "color": "#f87171",
+    "unlocked": true,
+    "x": 84,
+    "y": 54,
+    "scenarios": ["road_safety"]
+  },
+  {
+    "id": "market",
+    "name": "Busy Market",
+    "emoji": "🛒",
+    "color": "#c084fc",
+    "unlocked": false,
+    "x": 80,
+    "y": 78,
+    "scenarios": []
+  },
+  {
+    "id": "animal_park",
+    "name": "Animal Park",
+    "emoji": "🐾",
+    "color": "#f59e0b",
+    "unlocked": true,
+    "x": 50,
+    "y": 80,
+    "scenarios": ["helping_animal"]
+  }
+]
