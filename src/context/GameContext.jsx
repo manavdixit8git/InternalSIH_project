@@ -34,14 +34,14 @@ export function GameProvider({ children }) {
   const [sfxOn, setSfxOn] = useState(settings.sfx !== false);
   const [musicOn, setMusicOn] = useState(settings.music !== false);
   const [voiceOn, setVoiceOn] = useState(settings.voice !== false);
+  const [lang, setLangState] = useState(settings.lang || "en");
+  const [voiceSpeed, setVoiceSpeedState] = useState(settings.voiceSpeed ?? 1);
   const [speaking, setSpeaking] = useState(false);
   const [audioReady, setAudioReady] = useState(false);
   const unlockedRef = useRef(false);
 
-  /* ---------- Track speech so the UI can animate a talking character ---------- */
   useEffect(() => voiceService.subscribe(setSpeaking), []);
 
-  /* ---------- Unlock audio + start music on the first user gesture ---------- */
   useEffect(() => {
     const unlock = () => {
       if (unlockedRef.current) return;
@@ -59,28 +59,22 @@ export function GameProvider({ children }) {
     };
   }, [musicOn]);
 
-  /* ---------- Music mood follows the route ---------- */
   useEffect(() => {
     const path = location.pathname;
-    if (path.startsWith("/scenario")) return; // scenario controls its own mood
+    if (path.startsWith("/scenario")) return;
     musicService.setMood(ROUTE_MOOD[path] || "menu");
     soundService.stopAmbient();
   }, [location.pathname]);
 
-  /* ---------- Stop stale narration when navigating ---------- */
   useEffect(() => {
-    voiceService.cancelStale(2400);
+    voiceService.cancelStale(2600);
   }, [location.pathname]);
 
-  /* ---------- Cleanup on unmount ---------- */
-  useEffect(
-    () => () => {
-      voiceService.cancel();
-      musicService.stop();
-      soundService.stopAmbient();
-    },
-    []
-  );
+  useEffect(() => () => {
+    voiceService.cancel();
+    musicService.stop();
+    soundService.stopAmbient();
+  }, []);
 
   const setPlayer = useCallback((p) => {
     storageService.setPlayer(p);
@@ -105,7 +99,6 @@ export function GameProvider({ children }) {
     refresh();
   }, [refresh]);
 
-  /* ---------- Audio toggles ---------- */
   const toggleSfx = useCallback(() => {
     setSfxOn((v) => {
       const next = !v;
@@ -130,26 +123,30 @@ export function GameProvider({ children }) {
     setVoiceOn((v) => {
       const next = !v;
       voiceService.setEnabled(next);
-      if (next) voiceService.speak("Voice is on! Let's play!");
+      if (next) voiceService.speak(next ? (lang === "hi" ? "आवाज़ चालू है!" : "Voice is on!") : "");
       return next;
     });
+  }, [lang]);
+
+  const setLang = useCallback((l) => {
+    const next = voiceService.setLang(l);
+    setLangState(next);
+    // quick confirmation in new language
+    setTimeout(() => {
+      if (voiceOn) voiceService.speak(next === "hi" ? "हिन्दी चुनी गई" : "English selected");
+    }, 120);
+  }, [voiceOn]);
+
+  const toggleLang = useCallback(() => {
+    setLang(lang === "en" ? "hi" : "en");
+  }, [lang, setLang]);
+
+  const setVoiceSpeed = useCallback((s) => {
+    voiceService.setSpeed(s);
+    setVoiceSpeedState(s);
   }, []);
 
-  /** Master switch — true when at least one audio channel is on. */
   const anyAudioOn = sfxOn || musicOn || voiceOn;
-  const toggleAllAudio = useCallback(() => {
-    const turnOff = sfxOn || musicOn || voiceOn;
-    const next = !turnOff;
-    setSfxOn(next);
-    soundService.setEnabled(next);
-    setMusicOn(next);
-    musicService.setEnabled(next);
-    setVoiceOn(next);
-    voiceService.setEnabled(next);
-    const s = storageService.getSettings();
-    s.music = next;
-    storageService.setSettings(s);
-  }, [sfxOn, musicOn, voiceOn]);
 
   const value = {
     player,
@@ -160,19 +157,21 @@ export function GameProvider({ children }) {
     refresh,
     resetProgress,
 
-    // audio state
     sfxOn,
     musicOn,
     voiceOn,
+    lang,
+    voiceSpeed,
     speaking,
     audioReady,
     anyAudioOn,
     toggleSfx,
     toggleMusic,
     toggleVoice,
-    toggleAllAudio,
+    setLang,
+    toggleLang,
+    setVoiceSpeed,
 
-    // audio actions
     playSound: (n) => soundService.play(n),
     startAmbient: (k) => soundService.startAmbient(k),
     stopAmbient: () => soundService.stopAmbient(),
@@ -181,8 +180,26 @@ export function GameProvider({ children }) {
     say: (lines, opts) => voiceService.say(lines, opts),
     speakAs: (text, kind, opts) => voiceService.character(text, kind, opts),
     stopSpeaking: () => voiceService.cancel(),
-    softStopSpeaking: (grace) => voiceService.cancelStale(grace),
+    softStopSpeaking: (g) => voiceService.cancelStale(g),
     voiceSupported: voiceService.isSupported(),
+    // helper to get localized string from scenario
+    L: (scenario, field) => {
+      if (!scenario) return "";
+      // field like "intro" -> scenario.en.intro or scenario.hi.intro
+      const pack = scenario[lang] || scenario.en || {};
+      if (field.includes(".")) {
+        const [a, b] = field.split(".");
+        return pack[a]?.[b] || scenario.en?.[a]?.[b] || "";
+      }
+      return pack[field] || scenario[field] || "";
+    },
+    choiceL: (scenario, idx, field) => {
+      if (!scenario) return "";
+      const pack = scenario[lang] || scenario.en || {};
+      const choice = pack.choices?.[idx];
+      if (!choice) return "";
+      return choice[field] || "";
+    }
   };
 
   return <GameContext.Provider value={value}>{children}</GameContext.Provider>;

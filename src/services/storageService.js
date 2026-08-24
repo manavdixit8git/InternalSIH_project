@@ -23,6 +23,14 @@ function write(key, value) {
   }
 }
 
+const DEFAULT_SETTINGS = {
+  sfx: true,
+  music: true,
+  voice: true,
+  lang: "en", // en | hi
+  voiceSpeed: 1, // 0.85 .. 1.15  (normal)
+};
+
 export const storageService = {
   KEYS,
   getPlayer: () => read(KEYS.PLAYER, null),
@@ -51,8 +59,11 @@ export const storageService = {
     }),
   setWorld: (w) => write(KEYS.WORLD, w),
 
-  getSettings: () => read(KEYS.SETTINGS, { sfx: true, music: true, voice: true }),
-  setSettings: (s) => write(KEYS.SETTINGS, s),
+  getSettings: () => {
+    const s = read(KEYS.SETTINGS, DEFAULT_SETTINGS);
+    return { ...DEFAULT_SETTINGS, ...s };
+  },
+  setSettings: (s) => write(KEYS.SETTINGS, { ...DEFAULT_SETTINGS, ...s }),
 
   resetAll: () => {
     Object.values(KEYS).forEach((k) => localStorage.removeItem(k));

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Volume2, VolumeX, X, Mic, Music, Sparkles as SparkIcon } from "lucide-react";
+import { Volume2, VolumeX, X, Mic, Music, Sparkles as SparkIcon, Languages } from "lucide-react";
 import { useGame } from "../../context/GameContext";
 
 /* Big chunky 3D button */
@@ -102,11 +102,11 @@ export function XPBar({ xp = 0, className = "" }) {
   const pct = xp % 100;
   return (
     <div className={`w-full ${className}`}>
-      <div className="mb-1 flex items-center justify-between text-xs font-bold text-white/90">
-        <span>Level {level}</span>
+      <div className="mb-1 flex items-center justify-between text-[10px] font-bold text-white/90">
+        <span>Lv {level}</span>
         <span>{xp} XP</span>
       </div>
-      <div className="h-4 w-full overflow-hidden rounded-full bg-white/30 shadow-inner">
+      <div className="h-3 w-full overflow-hidden rounded-full bg-white/30 shadow-inner">
         <motion.div
           className="h-full rounded-full bg-gradient-to-r from-yellow-300 to-amber-500"
           initial={{ width: 0 }}
@@ -115,6 +115,28 @@ export function XPBar({ xp = 0, className = "" }) {
         />
       </div>
     </div>
+  );
+}
+
+/* ===== Language Toggle - EN / हिंदी ===== */
+export function LangToggle({ className = "" }) {
+  const { lang, toggleLang, playSound } = useGame();
+  return (
+    <motion.button
+      whileHover={{ scale: 1.06 }}
+      whileTap={{ scale: 0.92 }}
+      onClick={() => {
+        playSound("pop");
+        toggleLang();
+      }}
+      aria-label={lang === "en" ? "Switch to Hindi" : "Switch to English"}
+      className={`font-fun flex h-11 items-center gap-1.5 rounded-full bg-white/90 px-3 text-sm font-extrabold shadow-md ${className}`}
+    >
+      <Languages size={18} />
+      <span className={lang === "en" ? "text-purple-700" : "text-slate-400"}>EN</span>
+      <span className="text-slate-300">|</span>
+      <span className={lang === "hi" ? "text-purple-700" : "text-slate-400"}>हिं</span>
+    </motion.button>
   );
 }
 
@@ -151,7 +173,7 @@ function ToggleRow({ icon: Icon, emoji, title, subtitle, on, onToggle, color }) 
 }
 
 export function AudioSettings({ onClose }) {
-  const { sfxOn, musicOn, voiceOn, toggleSfx, toggleMusic, toggleVoice, speak, voiceSupported } = useGame();
+  const { sfxOn, musicOn, voiceOn, lang, voiceSpeed, toggleSfx, toggleMusic, toggleVoice, setLang, setVoiceSpeed, speak, voiceSupported } = useGame();
   return (
     <motion.div
       className="fixed inset-0 z-[60] flex items-center justify-center bg-black/55 p-4"
@@ -168,35 +190,74 @@ export function AudioSettings({ onClose }) {
         onClick={(e) => e.stopPropagation()}
       >
         <div className="mb-4 flex items-center justify-between">
-          <h3 className="font-fun text-2xl font-extrabold text-purple-700">🔊 Sound Settings</h3>
+          <h3 className="font-fun text-2xl font-extrabold text-purple-700">🔊 {lang === "hi" ? "आवाज़" : "Sound"}</h3>
           <button onClick={onClose} className="rounded-full bg-slate-100 p-2" aria-label="Close settings">
             <X size={20} />
           </button>
         </div>
 
+        {/* Language */}
+        <div className="mb-4 grid grid-cols-2 gap-2">
+          {[
+            { id: "en", label: "English", flag: "🇬🇧" },
+            { id: "hi", label: "हिन्दी", flag: "🇮🇳" },
+          ].map((l) => (
+            <button
+              key={l.id}
+              onClick={() => setLang(l.id)}
+              className={`font-fun flex items-center justify-center gap-2 rounded-2xl py-3 text-lg font-extrabold transition ${
+                lang === l.id ? "bg-purple-600 text-white shadow" : "bg-slate-100 text-slate-600"
+              }`}
+            >
+              <span>{l.flag}</span> {l.label}
+            </button>
+          ))}
+        </div>
+
         <div className="space-y-3">
           <ToggleRow
-            icon={Mic} emoji="🎙️" title="Talking Voice"
-            subtitle={voiceSupported ? "Hear the story read aloud" : "Not supported in this browser"}
+            icon={Mic} emoji="🎙️" title={lang === "hi" ? "बोलने वाली आवाज़" : "Talking Voice"}
+            subtitle={voiceSupported ? (lang === "hi" ? "कहानी सुनो" : "Hear the story") : "Not supported"}
             on={voiceOn} onToggle={toggleVoice} color="#7c5cff"
           />
           <ToggleRow
-            icon={Music} emoji="🎵" title="Music"
-            subtitle="Happy background tunes"
+            icon={Music} emoji="🎵" title={lang === "hi" ? "संगीत" : "Music"}
+            subtitle={lang === "hi" ? "प्यारी धुन" : "Happy tunes"}
             on={musicOn} onToggle={toggleMusic} color="#22c55e"
           />
           <ToggleRow
-            icon={SparkIcon} emoji="🐦" title="Sounds & Animals"
-            subtitle="Chirps, splashes and effects"
+            icon={SparkIcon} emoji="🐦" title={lang === "hi" ? "जानवरों की आवाज़" : "Animal Sounds"}
+            subtitle={lang === "hi" ? "चहचहाहट, छपाक" : "Chirps, splashes"}
             on={sfxOn} onToggle={toggleSfx} color="#f59e0b"
           />
         </div>
 
+        {/* Speed - normal */}
+        <div className="mt-4 rounded-2xl bg-slate-50 p-3">
+          <p className="font-fun mb-2 text-sm font-bold text-slate-600">
+            {lang === "hi" ? "बोलने की गति — सामान्य" : "Speech speed — normal"}
+          </p>
+          <div className="flex items-center gap-2">
+            <span className="text-xs">🐢</span>
+            <input
+              type="range"
+              min="0.85"
+              max="1.15"
+              step="0.05"
+              value={voiceSpeed}
+              onChange={(e) => setVoiceSpeed(parseFloat(e.target.value))}
+              className="h-2 flex-1 accent-purple-600"
+            />
+            <span className="text-xs">🐰</span>
+            <span className="font-fun ml-2 text-sm font-bold text-purple-700">{voiceSpeed.toFixed(2)}x</span>
+          </div>
+        </div>
+
         <button
-          onClick={() => speak("Hello! I am your guide. Let's make great choices together!")}
+          onClick={() => speak(lang === "hi" ? "नमस्ते! मैं आपका गाइड हूँ। चलो अच्छा चुनाव करते हैं!" : "Hello! I am your guide. Let's make great choices together!")}
           className="font-fun btn-3d mt-5 w-full rounded-2xl bg-purple-600 py-3.5 text-lg font-extrabold text-white"
         >
-          🗣️ Test the Voice
+          🗣️ {lang === "hi" ? "आवाज़ सुनो" : "Test Voice"}
         </button>
       </motion.div>
     </motion.div>

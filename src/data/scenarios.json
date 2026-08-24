@@ -7,30 +7,67 @@
     "location": "industrial_area",
     "scene": "factory",
     "ageGroups": ["5-7", "8-10", "11-12"],
-    "intro": "Look! The big factory is making lots of dark smoke.",
-    "question": "What should we do?",
+    "photo": "https://images.pexels.com/photos/33944133/pexels-photo-33944133.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
     "worldKey": "sky",
+    "en": {
+      "title": "The Smoky Factory",
+      "intro": "Look! The big factory is making lots of dark smoke.",
+      "question": "What should we do?",
+      "choices": [
+        {
+          "text": "Clean the smoke",
+          "characterMessage": "Thank you! Clean air helps us live!",
+          "message": "Great choice! Cleaner air keeps people, animals and nature healthy."
+        },
+        {
+          "text": "Make more smoke",
+          "characterMessage": "The dirty air makes it hard to breathe...",
+          "message": "Too much smoke pollutes the air and can harm living things."
+        }
+      ]
+    },
+    "hi": {
+      "title": "धुएँ वाली फैक्ट्री",
+      "intro": "देखो! बड़ी फैक्ट्री बहुत काला धुआँ निकाल रही है।",
+      "question": "हमें क्या करना चाहिए?",
+      "choices": [
+        {
+          "text": "धुआँ साफ़ करो",
+          "characterMessage": "धन्यवाद! साफ़ हवा से हम जी पाते हैं!",
+          "message": "बहुत अच्छा! साफ़ हवा लोगों, जानवरों और प्रकृति को स्वस्थ रखती है।"
+        },
+        {
+          "text": "और धुआँ बनाओ",
+          "characterMessage": "गंदी हवा में साँस लेना मुश्किल है...",
+          "message": "बहुत ज़्यादा धुआँ हवा को गंदा करता है और जीवों को नुकसान पहुँचाता है।"
+        }
+      ]
+    },
     "choices": [
       {
         "id": "reduce_smoke",
-        "text": "Clean the smoke",
-        "emoji": "🌱",
         "type": "positive",
         "reward": 20,
         "badge": "planet_protector",
         "state": "positive",
-        "characterMessage": "Thank you! Clean air helps us live!",
-        "message": "Great choice! Cleaner air keeps people, animals and nature healthy."
+        "emoji": "🌱",
+        "visual": "clean",
+        "photo": "https://images.pexels.com/photos/11294358/pexels-photo-11294358.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+        "label_en": "CLEAN",
+        "label_hi": "साफ़",
+        "color": "#22c55e"
       },
       {
         "id": "increase_smoke",
-        "text": "Make more smoke",
-        "emoji": "🌫️",
         "type": "negative",
         "reward": 0,
         "state": "negative",
-        "characterMessage": "The dirty air makes it hard to breathe...",
-        "message": "Too much smoke pollutes the air and can harm living things."
+        "emoji": "🌫️",
+        "visual": "polluted",
+        "photo": "https://images.pexels.com/photos/33944133/pexels-photo-33944133.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+        "label_en": "SMOKE",
+        "label_hi": "धुआँ",
+        "color": "#6b7280"
       }
     ]
   },
@@ -42,30 +79,67 @@
     "location": "river",
     "scene": "river",
     "ageGroups": ["5-7", "8-10", "11-12"],
-    "intro": "You finished a snack. Here is the empty plastic wrapper.",
-    "question": "Where should it go?",
+    "photo": "https://images.pexels.com/photos/15060366/pexels-photo-15060366.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
     "worldKey": "river",
+    "en": {
+      "title": "Plastic by the River",
+      "intro": "You finished a snack. Here is the empty plastic wrapper.",
+      "question": "Where should it go?",
+      "choices": [
+        {
+          "text": "Put it in the bin",
+          "characterMessage": "Yay! The water stays clean for us!",
+          "message": "Great job! Clean water keeps fish and rivers healthy."
+        },
+        {
+          "text": "Throw it in the river",
+          "characterMessage": "The plastic is hurting our home...",
+          "message": "Plastic in rivers hurts fish and pollutes the water."
+        }
+      ]
+    },
+    "hi": {
+      "title": "नदी के पास प्लास्टिक",
+      "intro": "आपने चिप्स खा लिए। ये रहा खाली प्लास्टिक रैपर।",
+      "question": "इसे कहाँ डालें?",
+      "choices": [
+        {
+          "text": "कूड़ेदान में डालो",
+          "characterMessage": "ये! पानी हमारे लिए साफ़ रहा!",
+          "message": "शाबाश! साफ़ पानी मछलियों और नदी को स्वस्थ रखता है।"
+        },
+        {
+          "text": "नदी में फेंको",
+          "characterMessage": "प्लास्टिक हमारे घर को नुकसान पहुँचा रहा है...",
+          "message": "नदी में प्लास्टिक मछलियों को चोट पहुँचाता है।"
+        }
+      ]
+    },
     "choices": [
       {
         "id": "use_bin",
-        "text": "Put it in the bin",
-        "emoji": "🗑️",
         "type": "positive",
         "reward": 20,
         "badge": "nature_guardian",
         "state": "positive",
-        "characterMessage": "Yay! The water stays clean for us!",
-        "message": "Great job! Clean water keeps fish and rivers healthy."
+        "emoji": "🗑️",
+        "visual": "bin",
+        "photo": "https://images.pexels.com/photos/28712146/pexels-photo-28712146.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "label_en": "BIN",
+        "label_hi": "कूड़ेदान",
+        "color": "#16a34a"
       },
       {
         "id": "throw_river",
-        "text": "Throw it in the river",
-        "emoji": "🌊",
         "type": "negative",
         "reward": 0,
         "state": "negative",
-        "characterMessage": "The plastic is hurting our home...",
-        "message": "Plastic in rivers hurts fish and pollutes the water."
+        "emoji": "🌊",
+        "visual": "river",
+        "photo": "https://images.pexels.com/photos/15060366/pexels-photo-15060366.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+        "label_en": "RIVER",
+        "label_hi": "नदी",
+        "color": "#ef4444"
       }
     ]
   },
@@ -77,30 +151,67 @@
     "location": "neighborhood",
     "scene": "water",
     "ageGroups": ["5-7", "8-10", "11-12"],
-    "intro": "The tap is running and running with nobody using it!",
-    "question": "What should we do?",
+    "photo": "https://images.pexels.com/photos/34295401/pexels-photo-34295401.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
     "worldKey": "water",
+    "en": {
+      "title": "The Running Tap",
+      "intro": "The tap is running and running with nobody using it!",
+      "question": "What should we do?",
+      "choices": [
+        {
+          "text": "Turn off the tap",
+          "characterMessage": "Thank you for saving me!",
+          "message": "Well done! Saving water helps everyone have enough."
+        },
+        {
+          "text": "Leave it running",
+          "characterMessage": "So much water is being wasted...",
+          "message": "Leaving taps on wastes water that everyone needs."
+        }
+      ]
+    },
+    "hi": {
+      "title": "बहता नल",
+      "intro": "नल लगातार बह रहा है और कोई इस्तेमाल नहीं कर रहा!",
+      "question": "हमें क्या करना चाहिए?",
+      "choices": [
+        {
+          "text": "नल बंद करो",
+          "characterMessage": "मुझे बचाने के लिए धन्यवाद!",
+          "message": "बहुत अच्छे! पानी बचाने से सबके लिए पानी बचता है।"
+        },
+        {
+          "text": "बहने दो",
+          "characterMessage": "बहुत सारा पानी बर्बाद हो रहा है...",
+          "message": "नल खुला छोड़ने से पानी बर्बाद होता है।"
+        }
+      ]
+    },
     "choices": [
       {
         "id": "turn_off",
-        "text": "Turn off the tap",
-        "emoji": "🚰",
         "type": "positive",
         "reward": 20,
         "badge": "water_saver",
         "state": "positive",
-        "characterMessage": "Thank you for saving me!",
-        "message": "Well done! Saving water helps everyone have enough."
+        "emoji": "🚰",
+        "visual": "off",
+        "photo": "https://images.pexels.com/photos/33713063/pexels-photo-33713063.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "label_en": "OFF",
+        "label_hi": "बंद",
+        "color": "#0ea5e9"
       },
       {
         "id": "leave_running",
-        "text": "Leave it running",
-        "emoji": "💧",
         "type": "negative",
         "reward": 0,
         "state": "negative",
-        "characterMessage": "So much water is being wasted...",
-        "message": "Leaving taps on wastes water that everyone needs."
+        "emoji": "💧",
+        "visual": "on",
+        "photo": "https://images.pexels.com/photos/34295401/pexels-photo-34295401.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+        "label_en": "ON",
+        "label_hi": "चालू",
+        "color": "#6b7280"
       }
     ]
   },
@@ -112,30 +223,67 @@
     "location": "green_valley",
     "scene": "tree",
     "ageGroups": ["5-7", "8-10", "11-12"],
-    "intro": "Someone wants to cut down this big, healthy tree full of birds.",
-    "question": "What should we do?",
+    "photo": "https://images.pexels.com/photos/34953675/pexels-photo-34953675.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
     "worldKey": "trees",
+    "en": {
+      "title": "Save the Tree",
+      "intro": "Someone wants to cut down this big, healthy tree full of birds.",
+      "question": "What should we do?",
+      "choices": [
+        {
+          "text": "Save the tree",
+          "characterMessage": "Hooray! We get to keep our home!",
+          "message": "Wonderful! Trees give us air, shade and homes for birds."
+        },
+        {
+          "text": "Cut it down",
+          "characterMessage": "Where will we live now?",
+          "message": "Cutting healthy trees takes away homes and clean air."
+        }
+      ]
+    },
+    "hi": {
+      "title": "पेड़ बचाओ",
+      "intro": "कोई इस बड़े हरे पेड़ को काटना चाहता है जिसमें चिड़ियाँ रहती हैं।",
+      "question": "हमें क्या करना चाहिए?",
+      "choices": [
+        {
+          "text": "पेड़ बचाओ",
+          "characterMessage": "हुर्रे! हमारा घर बच गया!",
+          "message": "बहुत बढ़िया! पेड़ हमें हवा, छाया और चिड़ियों के लिए घर देते हैं।"
+        },
+        {
+          "text": "काट दो",
+          "characterMessage": "अब हम कहाँ रहेंगे?",
+          "message": "हरे पेड़ काटने से घर और साफ़ हवा चली जाती है।"
+        }
+      ]
+    },
     "choices": [
       {
         "id": "save_tree",
-        "text": "Save the tree",
-        "emoji": "🌳",
         "type": "positive",
         "reward": 20,
         "badge": "nature_guardian",
         "state": "positive",
-        "characterMessage": "Hooray! We get to keep our home!",
-        "message": "Wonderful! Trees give us air, shade and homes for birds."
+        "emoji": "🌳",
+        "visual": "save",
+        "photo": "https://images.pexels.com/photos/34953675/pexels-photo-34953675.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+        "label_en": "SAVE",
+        "label_hi": "बचाओ",
+        "color": "#16a34a"
       },
       {
         "id": "cut_tree",
-        "text": "Cut it down",
-        "emoji": "🪓",
         "type": "negative",
         "reward": 0,
         "state": "negative",
-        "characterMessage": "Where will we live now?",
-        "message": "Cutting healthy trees takes away homes and clean air."
+        "emoji": "🪓",
+        "visual": "cut",
+        "photo": "https://images.pexels.com/photos/7318509/pexels-photo-7318509.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+        "label_en": "CUT",
+        "label_hi": "काटो",
+        "color": "#78350f"
       }
     ]
   },
@@ -147,30 +295,67 @@
     "location": "city_road",
     "scene": "road",
     "ageGroups": ["5-7", "8-10", "11-12"],
-    "intro": "You need to get to the other side of a busy road.",
-    "question": "How should you cross?",
+    "photo": "https://images.pexels.com/photos/17407697/pexels-photo-17407697.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
     "worldKey": "safety",
+    "en": {
+      "title": "Crossing the Road",
+      "intro": "You need to get to the other side of a busy road.",
+      "question": "How should you cross?",
+      "choices": [
+        {
+          "text": "Use the crossing",
+          "characterMessage": "Safe and sound! Great looking!",
+          "message": "Smart! Always cross at the zebra crossing when it is safe."
+        },
+        {
+          "text": "Run across quickly",
+          "characterMessage": "Oh no, that was very risky!",
+          "message": "Running across is dangerous. Always use the crossing."
+        }
+      ]
+    },
+    "hi": {
+      "title": "सड़क पार करना",
+      "intro": "आपको व्यस्त सड़क के दूसरी तरफ जाना है।",
+      "question": "कैसे पार करें?",
+      "choices": [
+        {
+          "text": "ज़ेब्रा क्रॉसिंग से",
+          "characterMessage": "सुरक्षित! बहुत अच्छे!",
+          "message": "समझदारी! हमेशा ज़ेब्रा क्रॉसिंग से पार करो जब सुरक्षित हो।"
+        },
+        {
+          "text": "दौड़ कर पार करो",
+          "characterMessage": "ओह नहीं, ये बहुत खतरनाक था!",
+          "message": "दौड़ कर पार करना खतरनाक है। हमेशा क्रॉसिंग का इस्तेमाल करो।"
+        }
+      ]
+    },
     "choices": [
       {
         "id": "zebra_cross",
-        "text": "Use the crossing",
-        "emoji": "🚸",
         "type": "positive",
         "reward": 20,
         "badge": "safety_star",
         "state": "positive",
-        "characterMessage": "Safe and sound! Great looking!",
-        "message": "Smart! Always cross at the zebra crossing when it is safe."
+        "emoji": "🚸",
+        "visual": "safe",
+        "photo": "https://images.pexels.com/photos/17407697/pexels-photo-17407697.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+        "label_en": "SAFE",
+        "label_hi": "सुरक्षित",
+        "color": "#22c55e"
       },
       {
         "id": "run_across",
-        "text": "Run across quickly",
-        "emoji": "🏃",
         "type": "negative",
         "reward": 0,
         "state": "negative",
-        "characterMessage": "Oh no, that was very risky!",
-        "message": "Running across is dangerous. Always use the crossing."
+        "emoji": "🏃",
+        "visual": "risky",
+        "photo": "https://images.pexels.com/photos/10428887/pexels-photo-10428887.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+        "label_en": "RUN",
+        "label_hi": "दौड़ो",
+        "color": "#ef4444"
       }
     ]
   },
@@ -182,30 +367,67 @@
     "location": "animal_park",
     "scene": "animal",
     "ageGroups": ["5-7", "8-10", "11-12"],
-    "intro": "A little kitten is stuck and cannot get down. It looks scared.",
-    "question": "What should you do?",
+    "photo": "https://images.pexels.com/photos/8150287/pexels-photo-8150287.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
     "worldKey": "kindness",
+    "en": {
+      "title": "The Trapped Kitten",
+      "intro": "A little kitten is stuck and cannot get down. It looks scared.",
+      "question": "What should you do?",
+      "choices": [
+        {
+          "text": "Ask an adult to help",
+          "characterMessage": "Meow! Thank you for helping me!",
+          "message": "Kind and safe! Getting an adult is the best way to help."
+        },
+        {
+          "text": "Walk away",
+          "characterMessage": "I'm still stuck and scared...",
+          "message": "Ignoring an animal in need is not kind. We can help safely."
+        }
+      ]
+    },
+    "hi": {
+      "title": "फँसी बिल्ली",
+      "intro": "एक छोटी बिल्ली फँसी है और नीचे नहीं आ पा रही। वो डरी हुई है।",
+      "question": "आप क्या करोगे?",
+      "choices": [
+        {
+          "text": "बड़े की मदद लो",
+          "characterMessage": "म्याऊँ! मेरी मदद के लिए धन्यवाद!",
+          "message": "दयालु और सुरक्षित! बड़ों से मदद लेना सबसे अच्छा तरीका है।"
+        },
+        {
+          "text": "चले जाओ",
+          "characterMessage": "मैं अभी भी फँसी और डरी हुई हूँ...",
+          "message": "ज़रूरतमंद जानवर को नज़रअंदाज़ करना दयालु नहीं है।"
+        }
+      ]
+    },
     "choices": [
       {
         "id": "get_help",
-        "text": "Ask an adult to help",
-        "emoji": "🧑‍🚒",
         "type": "positive",
         "reward": 20,
         "badge": "animal_friend",
         "state": "positive",
-        "characterMessage": "Meow! Thank you for helping me!",
-        "message": "Kind and safe! Getting an adult is the best way to help."
+        "emoji": "🧑‍🚒",
+        "visual": "help",
+        "photo": "https://images.pexels.com/photos/8150287/pexels-photo-8150287.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+        "label_en": "HELP",
+        "label_hi": "मदद",
+        "color": "#ec4899"
       },
       {
         "id": "ignore_animal",
-        "text": "Walk away",
-        "emoji": "🚶",
         "type": "negative",
         "reward": 0,
         "state": "negative",
-        "characterMessage": "I'm still stuck and scared...",
-        "message": "Ignoring an animal in need is not kind. We can help safely."
+        "emoji": "🚶",
+        "visual": "ignore",
+        "photo": "https://images.pexels.com/photos/19408722/pexels-photo-19408722.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+        "label_en": "IGNORE",
+        "label_hi": "छोड़ो",
+        "color": "#6b7280"
       }
     ]
   },
@@ -217,30 +439,67 @@
     "location": "school",
     "scene": "classroom",
     "ageGroups": ["5-7", "8-10", "11-12"],
-    "intro": "Oops! A piece of paper fell on the classroom floor.",
-    "question": "What should you do?",
+    "photo": "https://images.pexels.com/photos/8613055/pexels-photo-8613055.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
     "worldKey": "school",
+    "en": {
+      "title": "Paper on the Floor",
+      "intro": "Oops! A piece of paper fell on the classroom floor.",
+      "question": "What should you do?",
+      "choices": [
+        {
+          "text": "Pick it up",
+          "characterMessage": "Our classroom looks so tidy!",
+          "message": "Great! A clean classroom is nice for everyone."
+        },
+        {
+          "text": "Leave it there",
+          "characterMessage": "The room is getting messy...",
+          "message": "Leaving mess makes the room untidy for the whole class."
+        }
+      ]
+    },
+    "hi": {
+      "title": "फर्श पर कागज़",
+      "intro": "अरे! क्लास में फर्श पर एक कागज़ गिर गया।",
+      "question": "आप क्या करोगे?",
+      "choices": [
+        {
+          "text": "उठा लो",
+          "characterMessage": "हमारी क्लास कितनी साफ़ दिख रही है!",
+          "message": "बहुत अच्छे! साफ़ क्लास सबके लिए अच्छी होती है।"
+        },
+        {
+          "text": "वहीं छोड़ दो",
+          "characterMessage": "कमरा गंदा हो रहा है...",
+          "message": "कचरा छोड़ने से पूरी क्लास गंदी लगती है।"
+        }
+      ]
+    },
     "choices": [
       {
         "id": "pick_up",
-        "text": "Pick it up",
-        "emoji": "🧹",
         "type": "positive",
         "reward": 20,
         "badge": "helping_hand",
         "state": "positive",
-        "characterMessage": "Our classroom looks so tidy!",
-        "message": "Great! A clean classroom is nice for everyone."
+        "emoji": "🧹",
+        "visual": "pick",
+        "photo": "https://images.pexels.com/photos/8613055/pexels-photo-8613055.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+        "label_en": "PICK",
+        "label_hi": "उठाओ",
+        "color": "#0ea5e9"
       },
       {
         "id": "ignore_paper",
-        "text": "Leave it there",
-        "emoji": "🙈",
         "type": "negative",
         "reward": 0,
         "state": "negative",
-        "characterMessage": "The room is getting messy...",
-        "message": "Leaving mess makes the room untidy for the whole class."
+        "emoji": "🙈",
+        "visual": "ignore",
+        "photo": "https://images.pexels.com/photos/22626885/pexels-photo-22626885.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+        "label_en": "LEAVE",
+        "label_hi": "छोड़ो",
+        "color": "#6b7280"
       }
     ]
   },
@@ -252,30 +511,67 @@
     "location": "school",
     "scene": "sharing",
     "ageGroups": ["5-7", "8-10", "11-12"],
-    "intro": "Your friend has no colors for the art activity and looks sad.",
-    "question": "What will you do?",
+    "photo": "https://images.pexels.com/photos/13418651/pexels-photo-13418651.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
     "worldKey": "social",
+    "en": {
+      "title": "Sharing Colors",
+      "intro": "Your friend has no colors for the art activity and looks sad.",
+      "question": "What will you do?",
+      "choices": [
+        {
+          "text": "Share your colors",
+          "characterMessage": "Thank you! You're a great friend!",
+          "message": "Lovely! Sharing makes everyone happy."
+        },
+        {
+          "text": "Keep them to yourself",
+          "characterMessage": "I feel left out and sad...",
+          "message": "Not sharing can make friends feel sad and lonely."
+        }
+      ]
+    },
+    "hi": {
+      "title": "रंग बाँटना",
+      "intro": "आपके दोस्त के पास आर्ट के लिए रंग नहीं हैं और वो उदास है।",
+      "question": "आप क्या करोगे?",
+      "choices": [
+        {
+          "text": "रंग बाँटो",
+          "characterMessage": "धन्यवाद! तुम बहुत अच्छे दोस्त हो!",
+          "message": "बहुत सुंदर! बाँटने से सब खुश होते हैं।"
+        },
+        {
+          "text": "अपने पास रखो",
+          "characterMessage": "मुझे अकेला और उदास लग रहा है...",
+          "message": "न बाँटने से दोस्त उदास हो जाते हैं।"
+        }
+      ]
+    },
     "choices": [
       {
         "id": "share_colors",
-        "text": "Share your colors",
-        "emoji": "🖍️",
         "type": "positive",
         "reward": 20,
         "badge": "kind_heart",
         "state": "positive",
-        "characterMessage": "Thank you! You're a great friend!",
-        "message": "Lovely! Sharing makes everyone happy."
+        "emoji": "🖍️",
+        "visual": "share",
+        "photo": "https://images.pexels.com/photos/13418651/pexels-photo-13418651.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+        "label_en": "SHARE",
+        "label_hi": "बाँटो",
+        "color": "#a855f7"
       },
       {
         "id": "refuse_share",
-        "text": "Keep them to yourself",
-        "emoji": "🙅",
         "type": "negative",
         "reward": 0,
         "state": "negative",
-        "characterMessage": "I feel left out and sad...",
-        "message": "Not sharing can make friends feel sad and lonely."
+        "emoji": "🙅",
+        "visual": "keep",
+        "photo": "https://images.pexels.com/photos/7169009/pexels-photo-7169009.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+        "label_en": "KEEP",
+        "label_hi": "रखो",
+        "color": "#6b7280"
       }
     ]
   }
